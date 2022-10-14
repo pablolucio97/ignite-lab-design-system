@@ -2,14 +2,16 @@ import clsx from 'clsx'
 import * as CheckBoxPrimitive from '@radix-ui/react-checkbox'
 import { Check } from 'phosphor-react'
 
-export function CheckBox() {
+export interface CheckBoxProps extends CheckBoxPrimitive.CheckboxProps { }
+
+export function CheckBox(props: CheckBoxProps) {
 
   return (
     <CheckBoxPrimitive.Root className={
       clsx('w-6 h-6 bg-gray800 rounded')
-    }>
+    } {...props} >
       <CheckBoxPrimitive.Indicator>
-        <Check weight='bold' className='h-5 w-5 text-cyan500' />
+        <Check weight='bold' className='h-5 w-5 text-cyan500'/>
       </CheckBoxPrimitive.Indicator>
     </CheckBoxPrimitive.Root>
   )
